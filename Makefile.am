@@ -19,7 +19,7 @@ libgrok_la_SOURCES = grok.c \
 		conf.tab.c \
 		conf.yy.c
 
-libgrok_la_LIBADD = -ltokyocabinet -lpcre -levent -ldl
+libgrok_la_LIBADD = $(TOKYOCABINET_LIBS) -lpcre -levent -ldl
 
 bin_PROGRAMS = grok discover
 grok_SOURCES = main.c
