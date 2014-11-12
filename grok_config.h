@@ -1,3 +1,5 @@
+#ifndef GROK_CONFIG_H
+#define GROK_CONFIG_H
 #include "grok_program.h"
 
 #define CURPROGRAM (conf->programs[conf->nprograms - 1])
@@ -27,3 +29,4 @@ void conf_new_input_file(struct config *conf, char *filename);
 void conf_new_matchconf(struct config *conf);
 void conf_new_match_pattern(struct config *conf, const char *pattern);
 void conf_match_set_debug(struct config *conf, int logmask);
+#endif
