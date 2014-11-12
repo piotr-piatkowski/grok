@@ -1,0 +1,24 @@
+Source: grok
+Section: libs
+Priority: optional
+Maintainer: Viktor Tusa <tusavik@gmail.com>
+Build-Depends: libtokyocabinet-dev, 
+  gperf,
+  debhelper,
+  dh-autoreconf,
+  libevent-dev
+Standards-Version: 3.9.5
+
+Package: libgrok
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Multi-Arch: same
+Description: grok advanced regexp parsing library
+
+Package: libgrok-dev
+Architecture: any
+Section: libdevel
+Depends: libgrok (= ${binary:Version}), ${misc:Depends}
+Multi-Arch: same
+Description: grok advanced regexp parsing library
