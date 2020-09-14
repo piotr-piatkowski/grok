@@ -23,10 +23,10 @@ libgrok_la_LIBADD = $(TOKYOCABINET_LIBS) -lpcre -levent -ldl
 
 bin_PROGRAMS = grok discover
 grok_SOURCES = main.c
-grok_LDADD = -lgrok
+grok_LDADD = libgrok.la
 
 discover_SOURCES = discover_main.c
-discover_LDADD = -lgrok
+discover_LDADD = libgrok.la
 
 include_HEADERS = filters.h \
 		  grok.h \
@@ -79,7 +79,7 @@ grok_capture_xdr.h: grok_capture.x
 	rpcgen -h $< -o $@
 
 %.c: %.gperf
-	@if $(GPERF) --version | head -1 | egrep -v '3\.[0-9]+\.[0-9]+' ; then \
+	@if $(GPERF) --version | head -1 | egrep -v 'GNU gperf 3\.' ; then \
                 echo "We require gperf version >= 3.0.3" ; \
                 exit 1; \
         fi
