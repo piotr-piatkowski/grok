@@ -387,7 +387,7 @@ static void grok_capture_add_predicate(grok_t *grok, int capture_id,
 }
 
 static void grok_study_capture_map(grok_t *grok) {
-  char *nametable;
+  unsigned char *nametable;
   grok_capture *gct;
   int nametable_size;
   int nametable_entrysize;
